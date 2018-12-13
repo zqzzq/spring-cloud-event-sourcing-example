@@ -3,6 +3,17 @@ server:
 spring:
   application:
     name: discovery-service
+eureka:
+  instance:
+    nonSecurePort: 80
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 ---
 spring:
