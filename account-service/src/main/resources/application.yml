@@ -5,7 +5,7 @@ spring:
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://10.10.101.19:3306/dev
+    url: jdbc:mysql://10.10.101.19:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialize: false
