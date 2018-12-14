@@ -1,0 +1,35 @@
+server:
+  port: 9411
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  application:
+    name: zipkin-service
+
+zipkin:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      hosts: http://10.100.100.129:9200
+      cluster: elasticsearch
+      index: zipkin
+      index-shards: 1
+      index-replicas: 1
+  collector:
+    kafka:
+      bootstrap-servers: 10.100.100.129:9092
+      zookeeper: 10.100.100.129:2181
+      topic: zipkin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
