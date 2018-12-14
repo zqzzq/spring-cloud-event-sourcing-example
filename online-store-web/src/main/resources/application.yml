@@ -11,18 +11,18 @@ zuul:
   routes:
     edge-service:
       path: /api/**
-      url: http://192.168.99.100:9999
+      url: http://10.10.101.20:9999
     auth-service:
       path: /user/**
-      url: http://192.168.99.100:8181/uaa/user
+      url: http://10.10.101.20:8181/uaa/user
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://192.168.99.100:8181/uaa/user
+      userInfoUri: http://10.10.101.20:8181/uaa/user
     client:
-      accessTokenUri: http://192.168.99.100:8181/uaa/oauth/token
-      userAuthorizationUri: http://192.168.99.100:8181/uaa/oauth/authorize
+      accessTokenUri: http://10.10.101.20:8181/uaa/oauth/token
+      userAuthorizationUri: http://10.10.101.20:8181/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
   ignored: /assets/**

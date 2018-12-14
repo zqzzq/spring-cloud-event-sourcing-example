@@ -32,10 +32,10 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.99.100:8181/uaa/user
+      userInfoUri: http://10.10.101.20:8181/uaa/user
     client:
       client-id: acme
-      access-token-uri: http://192.168.99.100:8787
+      access-token-uri: http://10.10.101.20:8787
   enable-csrf: false
   ignored: /api/**
 eureka:
