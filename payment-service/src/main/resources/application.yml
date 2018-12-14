@@ -15,6 +15,16 @@ spring:
     url: jdbc:mysql://10.10.101.19:3306/dev?useSSL=false
     username: root
     password: dbpass
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: 10.10.101.19:9092
 ---
 spring:
   profiles: test

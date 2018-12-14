@@ -3,8 +3,18 @@ spring.profiles.active: development
 spring:
   profiles: development
   neo4j:
-    host: ${SPRING_NEO4J_HOST:192.168.99.100}
-    port: ${SPRING_NEO4J_PORT:7474}
+    host: 10.10.101.19
+    port: 7474
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: 10.10.101.19:9092
 eureka:
   instance:
     prefer-ip-address: true
