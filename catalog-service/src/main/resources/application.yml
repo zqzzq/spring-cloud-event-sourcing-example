@@ -12,6 +12,16 @@ spring:
     username: root
     password: dbpass
     initialize: false
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: 10.10.101.19:9092
 eureka:
   instance:
     prefer-ip-address: true
@@ -20,6 +30,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://10.10.101.19:8761/eureka/
+
 ---
 spring:
   profiles: docker
