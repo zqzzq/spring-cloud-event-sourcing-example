@@ -22,10 +22,10 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.99.100:8181/uaa/user # user-service ip
+      userInfoUri: http://10.10.101.20:8181/uaa/user # user-service ip
     client:
       client-id: acme
-      access-token-uri: http://192.168.99.100:8787 # online-store-web ip
+      access-token-uri: http://10.10.101.20:8787 # online-store-web ip
 eureka:
   instance:
     prefer-ip-address: true
