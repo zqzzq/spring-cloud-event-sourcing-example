@@ -5,7 +5,7 @@ spring:
 spring:
   profiles: development
   redis:
-    host: 192.168.99.100
+    host: 10.10.101.19
     port: 6379
   datasource:
     url: jdbc:mysql://10.10.101.19:3306/dev?useSSL=false
