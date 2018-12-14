@@ -13,9 +13,9 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://localhost:3333/springcloud
+    url: jdbc:mysql://10.10.101.19:3306/dev
     username: root
-    password: 123456
+    password: dbpass
     initialize: true
 security.ignored: /resources/**
 ---
@@ -42,7 +42,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://10.10.101.19:8761/eureka/
 ---
 spring:
   profiles: test

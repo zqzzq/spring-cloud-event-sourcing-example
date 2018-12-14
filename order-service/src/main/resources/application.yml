@@ -4,7 +4,7 @@ spring:
   profiles: development
   data:
     mongodb:
-      host: 192.168.99.100
+      host: 10.10.101.19
       port: 27017
   jackson:
     date-format: "YYYY-MM-dd"
@@ -24,13 +24,13 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.99.100:8761/eureka/
+      defaultZone: http://10.10.101.19:8761/eureka/
 ---
 spring:
   profiles: docker
   data:
     mongodb:
-      host: mongo
+      host: 10.10.101.19
       port: 27017
   mvc:
     date-format: "YYYY-MM-dd"
