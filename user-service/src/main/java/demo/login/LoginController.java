@@ -31,7 +31,7 @@ import java.util.Map;
 @Controller
 @SessionAttributes("authorizationRequest")
 public class LoginController {
-    @Value("security.redirectUri")
+    @Value("${security.redirectUri}")
     private String redirectUri;
 
     @Autowired
@@ -80,16 +80,16 @@ public class LoginController {
 
         // Generate an authorization parameter map for the token request
         Map<String, String> authParams = null;
-        if (defaultSavedRequest != null) {
-            authParams = getAuthParameters(defaultSavedRequest);
-        } else {
-            authParams = new HashMap<String, String>();
-            authParams.put(OAuth2Utils.CLIENT_ID, "acme");
-            authParams.put(OAuth2Utils.REDIRECT_URI, redirectUri);
-            authParams.put(OAuth2Utils.RESPONSE_TYPE, "code");
-            authParams.put(OAuth2Utils.USER_OAUTH_APPROVAL, "true");
-            authParams.put(OAuth2Utils.GRANT_TYPE, "authorization_code");
-        }
+//        if (defaultSavedRequest != null) {
+        authParams = getAuthParameters(defaultSavedRequest);
+//        } else {
+//            authParams = new HashMap<String, String>();
+//            authParams.put(OAuth2Utils.CLIENT_ID, "acme");
+//            authParams.put(OAuth2Utils.REDIRECT_URI, redirectUri);
+//            authParams.put(OAuth2Utils.RESPONSE_TYPE, "code");
+//            authParams.put(OAuth2Utils.USER_OAUTH_APPROVAL, "true");
+//            authParams.put(OAuth2Utils.GRANT_TYPE, "authorization_code");
+//        }
 
         // Create the authorization request and put it in the view model
         AuthorizationRequest authRequest = new DefaultOAuth2RequestFactory(clients).createAuthorizationRequest(authParams);
