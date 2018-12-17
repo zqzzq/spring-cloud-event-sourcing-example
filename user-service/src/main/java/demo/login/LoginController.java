@@ -31,9 +31,6 @@ import java.util.Map;
 @Controller
 @SessionAttributes("authorizationRequest")
 public class LoginController {
-    //@Value("${security.redirectUri}")
-    private static String redirectUri = "http://10.10.101.20:8787/index.html";
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
