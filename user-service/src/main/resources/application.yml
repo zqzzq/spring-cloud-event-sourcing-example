@@ -6,6 +6,7 @@ server:
   port: 8181
   contextPath: /uaa
 security:
+  redirectUri: http://10.10.101.20:8787/index.html
   user:
     password: password
   enable-csrf: false

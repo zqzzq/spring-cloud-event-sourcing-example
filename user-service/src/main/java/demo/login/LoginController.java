@@ -1,6 +1,7 @@
 package demo.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,6 +31,8 @@ import java.util.Map;
 @Controller
 @SessionAttributes("authorizationRequest")
 public class LoginController {
+    @Value("security.redirectUri")
+    private String redirectUri;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -82,7 +85,7 @@ public class LoginController {
         } else {
             authParams = new HashMap<String, String>();
             authParams.put(OAuth2Utils.CLIENT_ID, "acme");
-            authParams.put(OAuth2Utils.REDIRECT_URI, "http://localhost:8787/index.html");
+            authParams.put(OAuth2Utils.REDIRECT_URI, redirectUri);
             authParams.put(OAuth2Utils.RESPONSE_TYPE, "code");
             authParams.put(OAuth2Utils.USER_OAUTH_APPROVAL, "true");
             authParams.put(OAuth2Utils.GRANT_TYPE, "authorization_code");
