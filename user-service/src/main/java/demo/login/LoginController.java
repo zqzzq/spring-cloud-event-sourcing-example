@@ -82,7 +82,7 @@ public class LoginController {
         } else {
             authParams = new HashMap<String, String>();
             authParams.put(OAuth2Utils.CLIENT_ID, "acme");
-            authParams.put(OAuth2Utils.REDIRECT_URI, "http://localhost:8787/index.html");
+            authParams.put(OAuth2Utils.REDIRECT_URI, "http://10.10.101.20:8787/index.html");
             authParams.put(OAuth2Utils.RESPONSE_TYPE, "code");
             authParams.put(OAuth2Utils.USER_OAUTH_APPROVAL, "true");
             authParams.put(OAuth2Utils.GRANT_TYPE, "authorization_code");
