@@ -11,7 +11,7 @@ spring:
     url: jdbc:mysql://10.10.101.19:3306/dev?useSSL=false
     username: root
     password: dbpass
-    initialize: false
+    initialize: true
   sleuth:
     sampler:
       probability: 1.0
@@ -59,4 +59,4 @@ spring:
   jpa:
     database: H2
   datasource:
-    initialize: false
+    initialize: true

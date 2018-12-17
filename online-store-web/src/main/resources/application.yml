@@ -7,6 +7,8 @@ spring:
   application:
     name: online-store-web
 zuul:
+  host:
+    connect-timeout-millis: 60000
   ignored-services: '*'
   routes:
     edge-service:
@@ -15,6 +17,13 @@ zuul:
     auth-service:
       path: /user/**
       url: http://10.10.101.20:8181/uaa/user
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 12000
 security:
   enable-csrf: false
   oauth2:
