@@ -37,7 +37,8 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
-
+        timeout:
+          enabled: false
 ---
 spring:
   profiles: docker
