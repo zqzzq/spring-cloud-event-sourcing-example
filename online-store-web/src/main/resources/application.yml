@@ -19,11 +19,9 @@ zuul:
   routes:
     edge-service:
       path: /api/**
-#      service-id: EDGE-SERVICE
       url: http://10.10.101.20:9999
     auth-service:
       path: /user/**
-#      service-id: auth-service
       url: http://10.10.101.20:8181/uaa/user
 hystrix:
   command:
