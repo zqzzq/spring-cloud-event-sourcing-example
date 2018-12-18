@@ -6,17 +6,25 @@ spring:
   profiles: development
   application:
     name: online-store-web
+ribbon:
+  ReadTimeout: 600000
+  ConnectionTimeout: 600000
 zuul:
   host:
-    connect-timeout-millis: 60000
+    connect-timeout-millis: 600000
+    max-total-connections: 600000
+    socket-timeout-millis: 600000
+    max-per-route-connections: 60000
   ignored-services: '*'
   routes:
     edge-service:
       path: /api/**
-      url: http://10.10.101.20:9999
+      service-id: EDGE-SERVICE
+#      url: http://10.10.101.20:9999
     auth-service:
       path: /user/**
-      url: http://10.10.101.20:8181/uaa/user
+      service-id: auth-service
+#      url: http://10.10.101.20:8181/uaa/user
 hystrix:
   command:
     default:
