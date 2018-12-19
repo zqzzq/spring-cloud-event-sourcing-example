@@ -22,7 +22,7 @@
         <module>account-service</module>
         <module>user-service</module>
         <module>payment-service</module>
-        <module>config-service</module>
+        <!--<module>config-service</module>-->
         <module>discovery-service</module>
         <module>online-store-web</module>
         <module>catalog-service</module>
