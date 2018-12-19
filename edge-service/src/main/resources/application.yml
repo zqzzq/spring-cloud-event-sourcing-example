@@ -6,6 +6,8 @@ spring:
   profiles: development
   application:
     name: edge-service
+  zipkin:
+    base-url: http://10.10.101.19:9411
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
