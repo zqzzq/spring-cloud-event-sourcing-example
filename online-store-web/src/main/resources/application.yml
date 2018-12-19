@@ -6,6 +6,8 @@ spring:
   profiles: development
   application:
     name: online-store-web
+  zipkin:
+    base-url: http://10.10.101.19:9411
 ribbon:
   ReadTimeout: 600000
   ConnectionTimeout: 600000

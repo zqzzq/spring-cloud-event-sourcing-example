@@ -10,16 +10,8 @@ spring:
     date-format: "YYYY-MM-dd"
     serialization:
       write_dates_as_timestamps: true
-  sleuth:
-    sampler:
-      probability: 1.0
   zipkin:
-    sender:
-      type: kafka
-    kafka:
-      topic: zipkin
-  kafka:
-    bootstrap-servers: 10.10.101.19:9092
+    base-url: http://10.10.101.19:9411
 security:
   oauth2:
     resource:

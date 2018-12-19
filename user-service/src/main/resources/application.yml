@@ -18,6 +18,8 @@ spring:
     username: root
     password: dbpass
     initialize: true
+  zipkin:
+    base-url: http://10.10.101.19:9411
 security.ignored: /resources/**
 eureka:
   instance:
