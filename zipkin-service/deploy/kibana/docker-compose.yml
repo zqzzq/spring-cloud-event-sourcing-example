@@ -1,7 +1,0 @@
-version: '2'
-services:
-  kibana:
-    image: docker.elastic.co/kibana/kibana:6.5.3
-    environment:
-      SERVER_NAME: kibana
-      ELASTICSEARCH_URL: http://10.10.101.19:9200
