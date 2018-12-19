@@ -30,7 +30,15 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://10.10.101.19:8761/eureka/
-
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+        timeout:
+          enabled: false
 ---
 spring:
   profiles: docker
