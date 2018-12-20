@@ -29,7 +29,7 @@ security:
       client-id: acme
       access-token-uri: http://10.10.101.20:8787
   enable-csrf: false
-  ignored: /api/**
+  ignored: /api/** , /hystrix.stream
 eureka:
   instance:
     prefer-ip-address: true

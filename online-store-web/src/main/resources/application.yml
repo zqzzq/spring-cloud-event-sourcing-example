@@ -42,7 +42,7 @@ security:
       userAuthorizationUri: http://10.10.101.20:8181/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
-  ignored: /assets/**
+  ignored: /assets/** , /hystrix.stream
 eureka:
   instance:
     non-secure-port: 8787

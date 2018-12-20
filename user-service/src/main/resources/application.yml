@@ -20,7 +20,7 @@ spring:
     initialize: true
   zipkin:
     base-url: http://10.10.101.19:9411
-security.ignored: /resources/**
+security.ignored: /resources/** , /hystrix.stream
 eureka:
   instance:
     prefer-ip-address: true

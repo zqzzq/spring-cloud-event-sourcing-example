@@ -35,7 +35,7 @@ security:
   oauth2:
     resource:
       userInfoUri: http://10.10.101.20:8181/uaa/user
-  ignored: /catalog/**
+  ignored: /catalog/** , /hystrix.stream
 eureka:
   instance:
     prefer-ip-address: true
