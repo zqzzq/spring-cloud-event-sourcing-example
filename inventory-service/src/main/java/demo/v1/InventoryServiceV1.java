@@ -43,7 +43,13 @@ public class InventoryServiceV1 {
     }
 
     private Product getProductFallback(String productId) {
-        return null;
+        Product product = new Product();
+        product.setDescription("fallback product");
+        product.setId(101010L);
+        product.setInStock(false);
+        product.setName("fallback");
+        product.setUnitPrice(123456d);
+        return product;
     }
 
     public List<Inventory> getAvailableInventoryForProductIds(String productIds) {
