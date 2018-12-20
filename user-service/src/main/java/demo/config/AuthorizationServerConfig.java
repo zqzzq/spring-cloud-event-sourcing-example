@@ -24,7 +24,7 @@ public class AuthorizationServerConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/hystrix/**").permitAll()
+                .antMatchers("/hystrix.stream").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

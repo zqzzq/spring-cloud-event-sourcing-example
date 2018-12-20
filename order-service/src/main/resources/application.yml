@@ -18,7 +18,7 @@ security:
       userInfoUri: http://10.10.101.20:8181/uaa/user
     client:
       client-id: acme
-  ignored: /api/**
+  ignored: /api/** , /hystrix.stream
 eureka:
   instance:
     prefer-ip-address: true
