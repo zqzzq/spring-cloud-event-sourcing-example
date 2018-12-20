@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class RateLimitZuulFilter extends ZuulFilter {
 
-    private final RateLimiter rateLimiter = RateLimiter.create(10.0);
+    private final RateLimiter rateLimiter = RateLimiter.create(1000.0);
 
     @Override
     public String filterType() {

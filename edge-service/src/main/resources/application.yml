@@ -13,7 +13,7 @@ ribbon:
   ConnectTimeout: 60000
 zuul:
   host:
-    connect-timeout-millis: 60000
+    connect-timeout-millis: 6000000
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
