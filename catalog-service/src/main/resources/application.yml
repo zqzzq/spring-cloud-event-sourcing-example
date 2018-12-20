@@ -27,10 +27,11 @@ hystrix:
     default:
       execution:
         isolation:
+          strategy: SEMAPHORE
+          semaphore:
+            maxConcurrentRequests: 20
           thread:
             timeoutInMilliseconds: 600000
-        timeout:
-          enabled: false
 ---
 spring:
   profiles: docker
