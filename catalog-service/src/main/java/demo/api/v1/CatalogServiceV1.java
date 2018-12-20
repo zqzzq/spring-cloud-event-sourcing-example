@@ -41,9 +41,19 @@ public class CatalogServiceV1 {
         return catalog;
     }
 
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "getProductFallback")
     public Product getProduct(String productId) {
         return restTemplate.getForObject(String.format("http://inventory-service/v1/products/%s",
                 productId), Product.class);
+    }
+
+    public Product getProductFallback(String productId){
+        Product product = new Product();
+        product.setDescription("catalog fallback product");
+        product.setId(101010L);
+        product.setInStock(false);
+        product.setName("catalog fallback");
+        product.setUnitPrice(123456d);
+        return product;
     }
 }
