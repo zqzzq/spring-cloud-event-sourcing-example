@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: development
+    active: docker
 ---
 spring:
   profiles: cloud
@@ -46,13 +46,13 @@ spring:
     database: MYSQL
     generate-ddl: true
   datasource:
-    url: jdbc:mysql://mysql:3306/dev
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      userInfoUri: http://117.73.10.153:31287/uaa/user
     client:
       client-id: acme
   enable-csrf: false
@@ -63,7 +63,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
 ---
 spring:
   application:
