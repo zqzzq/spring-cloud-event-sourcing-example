@@ -30,14 +30,14 @@ eureka:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://mysql:3306/dev
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialize: true
 security:
   oauth2:
     resource:
-      userInfoUri: http://user-service-default-svc:8181/uaa/user
+      userInfoUri: http://117.73.10.153:31287/uaa/user
     client:
       client-id: acme
 eureka:
