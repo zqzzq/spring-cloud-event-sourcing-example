@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: development
+    active: docker
 ---
 spring:
   profiles: development
@@ -63,7 +63,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      userInfoUri: http://user-service-default-svc:8181/uaa/user
   ignored: /catalog/**
 eureka:
   instance:
@@ -72,7 +72,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 3000
