@@ -62,18 +62,18 @@ zuul:
   routes:
     edge-service:
       path: /api/**
-      url: http://edge-service:9999
+      url: http://edge-service-default-svc:9999
     auth-service:
       path: /user/**
-      url: http://user-service:8181/uaa/user
+      url: http://user-service-default-svc:8181/uaa/user
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://user-service:8181/uaa/user
+      userInfoUri: http://user-service-default-svc:8181/uaa/user
     client:
-      accessTokenUri: http://user-service:8181/uaa/oauth/token
-      userAuthorizationUri: http://user-service:8181/uaa/oauth/authorize
+      accessTokenUri: http://user-service-default-svc:8181/uaa/oauth/token
+      userAuthorizationUri: http://user-service-default-svc:8181/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
 eureka:
@@ -84,4 +84,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
