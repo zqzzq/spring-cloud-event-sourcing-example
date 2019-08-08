@@ -1,21 +1,20 @@
-spring.profiles.active: docker
+spring.profiles.active: development
 ---
 spring:
   profiles: development
   data:
     mongodb:
-      host: 10.10.101.19
+      host: mongodb-inspurtest14-mongodb
       port: 27017
   jackson:
     date-format: "YYYY-MM-dd"
     serialization:
       write_dates_as_timestamps: true
-  zipkin:
-    base-url: http://10.10.101.19:9411
+
 security:
   oauth2:
     resource:
-      userInfoUri: http://10.10.101.20:8181/uaa/user
+      userInfoUri: http://117.73.10.153:31287/uaa/user
     client:
       client-id: acme
   ignored: /api/** , /hystrix.stream
@@ -26,7 +25,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://10.10.101.19:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
 ---
 spring:
   profiles: docker
