@@ -1,19 +1,17 @@
 spring:
   profiles:
-    active: docker
+    active: development
 ---
 spring:
   profiles: development
   redis:
-    host: 10.10.101.19
+    host: redis
     port: 6379
   datasource:
-    url: jdbc:mysql://10.10.101.19:3306/dev?useSSL=false
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialize: true
-  zipkin:
-    base-url: http://10.10.101.19:9411
 eureka:
   instance:
     prefer-ip-address: true
@@ -21,7 +19,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://10.10.101.19:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
 hystrix:
   command:
     default:
