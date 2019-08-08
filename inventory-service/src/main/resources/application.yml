@@ -3,7 +3,7 @@ spring.profiles.active: development
 spring:
   profiles: development
   neo4j:
-    host: neo4jdb-inspurtest14-neo4j
+    host: 117.73.10.153
     port: 7474
 
 eureka:
