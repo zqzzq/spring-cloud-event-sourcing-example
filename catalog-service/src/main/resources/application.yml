@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: development
+    active: docker
 ---
 spring:
   profiles: development
@@ -50,7 +50,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
 ---
 spring:
   profiles: test
