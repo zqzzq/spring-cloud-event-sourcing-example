@@ -1,4 +1,4 @@
-spring.profiles.active: development
+spring.profiles.active: docker
 ---
 spring:
   profiles: development
@@ -32,7 +32,7 @@ spring:
   profiles: docker
   data:
     mongodb:
-      host: 10.10.101.19
+      host: mongodb-inspurtest14-mongodb
       port: 27017
   mvc:
     date-format: "YYYY-MM-dd"
@@ -43,7 +43,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.99.100}:8181/uaa/user
+      userInfoUri: http://117.73.10.153:31287/uaa/user
     client:
       client-id: acme
 eureka:
@@ -53,4 +53,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service-default-svc:8761/eureka/
