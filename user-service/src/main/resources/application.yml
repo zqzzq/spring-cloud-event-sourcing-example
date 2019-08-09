@@ -9,7 +9,7 @@ security:
   redirectUri: http://10.10.101.20:8787/index.html
   user:
     password: password
-  enable-csrf: false
+  enable-csrf: true
 logging.level.org.springframework.security: DEBUG
 spring:
   profiles: development
@@ -37,7 +37,7 @@ server:
 security:
   user:
     password: password
-  enable-csrf: false
+  enable-csrf: true
 spring:
   profiles: docker
   datasource:
