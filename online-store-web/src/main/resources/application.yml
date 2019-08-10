@@ -65,15 +65,15 @@ zuul:
       url: http://edge-service-default-svc:9999
     auth-service:
       path: /user/**
-      url: http://117.73.10.153:31287/uaa/user
+      url: http://online-store-web.117.73.9.20.xip.io/uaa/user
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://117.73.10.153:31287/uaa/user
+      userInfoUri: http://online-store-web.117.73.9.20.xip.io/uaa/user
     client:
-      accessTokenUri: http://117.73.10.153:31287/uaa/oauth/token
-      userAuthorizationUri: http://117.73.10.153:31287/uaa/oauth/authorize
+      accessTokenUri: http://online-store-web.117.73.9.20.xip.io/uaa/oauth/token
+      userAuthorizationUri: http://online-store-web.117.73.9.20.xip.io/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
 eureka:
