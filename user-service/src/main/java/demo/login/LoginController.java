@@ -41,13 +41,11 @@ public class LoginController {
     @Autowired
     private HttpSessionSecurityContextRepository sessionRepository;
 
-    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         return "login";
     }
 
-    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
 

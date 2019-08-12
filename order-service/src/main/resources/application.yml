@@ -31,8 +31,8 @@ spring:
   profiles: docker
   data:
     mongodb:
-      host: mongodb-inspurtest14-mongodb
-      port: 27017
+      host: 117.73.10.153
+      port: 30441
   mvc:
     date-format: "YYYY-MM-dd"
   jackson:
@@ -42,7 +42,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://117.73.10.153:31287/uaa/user
+      userInfoUri: http://online-store-web.117.73.9.20.xip.io/uaa/user
     client:
       client-id: acme
 eureka:

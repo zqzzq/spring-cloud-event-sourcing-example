@@ -63,7 +63,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: http://user-service-default-svc:8181/uaa/user
+      userInfoUri: http://online-store-web.117.73.9.20.xip.io/uaa/user
   ignored: /catalog/**
 eureka:
   instance:

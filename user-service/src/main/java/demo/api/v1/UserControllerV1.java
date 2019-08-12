@@ -23,7 +23,6 @@ public class UserControllerV1 {
         this.userService = userService;
     }
 
-    @CrossOrigin(origins = "*")
     @RequestMapping(path = "/me")
     public ResponseEntity me(Principal principal) {
         User user = null;

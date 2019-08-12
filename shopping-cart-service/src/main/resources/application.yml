@@ -46,13 +46,13 @@ spring:
     database: MYSQL
     generate-ddl: true
   datasource:
-    url: jdbc:mysql://mysql:3306/dev?useSSL=false
+    url: jdbc:mysql://117.73.10.153:30006/dev?useSSL=false
     username: root
     password: dbpass
 security:
   oauth2:
     resource:
-      userInfoUri: http://117.73.10.153:31287/uaa/user
+      userInfoUri: http://online-store-web.117.73.9.20.xip.io/uaa/user
     client:
       client-id: acme
   enable-csrf: false

@@ -9,7 +9,7 @@ security:
   redirectUri: http://10.10.101.20:8787/index.html
   user:
     password: password
-  enable-csrf: true
+  enable-csrf: false
 logging.level.org.springframework.security: DEBUG
 spring:
   profiles: development
@@ -37,11 +37,11 @@ server:
 security:
   user:
     password: password
-  enable-csrf: true
+  enable-csrf: false
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://mysql:3306/dev?useSSL=false
+    url: jdbc:mysql://117.73.10.153:30006/dev?useSSL=false
     username: root
     password: dbpass
     initialize: true

@@ -9,7 +9,6 @@ import java.security.Principal;
 @RestController
 public class UserController {
 
-    @CrossOrigin(origins = "*")
     @RequestMapping("/user")
     public Principal user(Principal user) {
         return user;
